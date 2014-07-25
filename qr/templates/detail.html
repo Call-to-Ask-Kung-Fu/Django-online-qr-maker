@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<p>內容：{{ item.input }}</p>
+{% if item.icon %}
+<p>圖標：<img src="{{ item.thumb.url }}" alt="My image"/></p>
+{% else %}
+{% endif %}
+<p>碼：<img src="{{ item.qrmaked.url }}" alt="My image"/></p>
+
+<script type="text/javascript">
+function goBack()
+  {window.history.go(-1)}  
+</script>
+<input type="button" value="Back" onclick="GoBack()" />
+
+<a href="/qr/list">See What They Maked</a>
+<a href="/">home</a>

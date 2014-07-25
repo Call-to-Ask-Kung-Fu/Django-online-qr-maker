@@ -1,0 +1,19 @@
+{% for item in items %}
+    <li><a href="/qr/{{ item.id }}/">{{ item.input }}</a></li>
+{% endfor %}
+<div class="pagination">
+    <span class="step-links">
+        {% if items.has_previous %}
+            <a href="?page={{ items.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ items.number }} of {{ items.paginator.num_pages }}.
+        </span>
+
+        {% if items.has_next %}
+            <a href="?page={{ items.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+<a href="/">home</a>
