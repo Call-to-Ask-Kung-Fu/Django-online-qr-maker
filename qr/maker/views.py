@@ -12,14 +12,14 @@ from django.views.decorators.http import require_POST
 from django.core.exceptions import PermissionDenied
 
 def home(request):
-    context = {'form':QRForm}
-    print request.LANGUAGE_CODE
-    return render(request, 'home.html', context)
+    context = RequestContext(request, {'user': request.user, 'form':QRForm})
+    return render_to_response('home.html', context_instance=context)
 
 @require_POST
 def create(request):
     if request.user.is_authenticated():
         form = QRForm(data=request.POST, files=request.FILES)
+        print form
         if form.is_valid():
             qr = form.save(commit=False)
             qr.owner = request.user

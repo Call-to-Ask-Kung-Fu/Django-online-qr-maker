@@ -10,7 +10,7 @@ function makeqr()
         	}
         );
             if (values['input']==''){$("#id_input").val('Type Something');;retun;}
-            var data = new FormData($('form').get(0));
+            var data = new FormData($('#new').get(0));
             $.ajax({
                url: url,
                // dataType:"JSON",

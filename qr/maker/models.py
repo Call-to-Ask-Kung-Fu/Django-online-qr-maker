@@ -62,7 +62,7 @@ class QR(models.Model):
     date = models.DateTimeField(auto_now=True)
     input = models.TextField(_('Input Words'), max_length=2000)
     icon = models.ImageField(_('Icon'), upload_to=ICON_PATH, null=True, blank=True)
-    qrmaked = models.ImageField(upload_to=QR_PATH, blank=True)
+    qrmaked = models.ImageField(upload_to=QR_PATH, null=True, blank=True)
     shown = models.BooleanField(_('Show To Others'), default=True)
 
     def save(self):
