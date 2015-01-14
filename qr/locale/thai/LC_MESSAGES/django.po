@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-14 15:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: maker/models.py:63 templates/detail.html:3
+msgid "Input Words"
+msgstr ""
+
+#: maker/models.py:64
+msgid "Icon"
+msgstr ""
+
+#: maker/models.py:66
+msgid "Show To Others"
+msgstr ""
+
+#: templates/bousou.html:9
+msgid "Enter Romaji"
+msgstr ""
+
+#: templates/bousou.html:10
+msgid "Charater Choices"
+msgstr ""
+
+#: templates/bousou.html:11
+msgid "Result"
+msgstr ""
+
+#: templates/detail.html:4
+msgid "Code"
+msgstr ""
+
+#: templates/form.html:5
+msgid "Create!"
+msgstr ""
+
+#: templates/form.html:7
+msgid "Login with Google To Continue"
+msgstr ""
+
+#: templates/home.html:5
+msgid "Welcome to Home Of Saw-High"
+msgstr ""
+
+#: templates/home.html:14
+msgid "QR-Code Generator"
+msgstr ""
+
+#: templates/list.html:5
+msgid "User"
+msgstr ""
+
+#: templates/list.html:6
+msgid "Content"
+msgstr ""
+
+#: templates/list.html:8
+msgid "Operation"
+msgstr ""
+
+#: templates/listall.html:6 templates/listhis.html:5 templates/listmy.html:6
+msgid "previous"
+msgstr ""
+
+#: templates/listall.html:10 templates/listhis.html:9 templates/listmy.html:10
+msgid "Page"
+msgstr ""
+
+#: templates/listall.html:14 templates/listhis.html:13
+#: templates/listmy.html:14
+msgid "next"
+msgstr ""
+
+#: templates/listall.html:18 templates/listhis.html:18
+#: templates/listmy.html:19
+msgid "Close"
+msgstr ""
+
+#: templates/listmenu.html:2
+msgid "View The Codes"
+msgstr ""
+
+#: templates/listmenu.html:6
+msgid "All"
+msgstr ""
+
+#: templates/listmenu.html:8
+msgid "My"
+msgstr ""
+
+#: templates/listmenu.html:12
+msgid "This Part Was From Another Saw-High, And DO NOT Block Him On Google+."
+msgstr ""
+
+#: templates/user_panel.html:7
+msgid "Logout"
+msgstr ""
+
+#: templates/user_panel.html:9
+msgid "Please Login To Play With This Part."
+msgstr ""
+
+#: templates/user_panel.html:10
+msgid "Login with Google"
+msgstr ""

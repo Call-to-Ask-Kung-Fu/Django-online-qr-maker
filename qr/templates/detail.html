@@ -1,16 +1,6 @@
-{% load staticfiles %}
-<p>內容：{{ item.input }}</p>
-{% if item.icon %}
-<p>圖標：<img src="{{ item.thumb.url }}" alt="My image"/></p>
-{% else %}
-{% endif %}
-<p>碼：<img src="{{ item.qrmaked.url }}" alt="My image"/></p>
+{% load i18n %}
+<img src="{{ item.owner.profile.image }}" /><a href="{{ item.owner.profile.url }}">{{ item.owner.profile.displayname }}</a>
+<p>{% trans "Input Words" %}:{{ item.input }}</p>
+<p>{% trans "Code" %}:<img src="{{ item.qrmaked.url }}" alt="My image"/></p>
+<button id="more" onclick="more()">Create More</button>
 
-<script type="text/javascript">
-function goBack()
-  {window.history.go(-1)}  
-</script>
-<input type="button" value="Back" onclick="GoBack()" />
-
-<a href="/qr/list">See What They Maked</a>
-<a href="/">home</a>

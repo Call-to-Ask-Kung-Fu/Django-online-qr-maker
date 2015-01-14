@@ -1,0 +1,19 @@
+{% load i18n %}
+{% include 'list.html' %}
+  <div class="pagination">
+    <span class="step-links" id="step">
+        {% if items.has_previous %}
+            <a class="prev" href="{% url 'listmy' %}?page={{ items.previous_page_number }}">{% trans "previous" %}</a>
+        {% endif %}
+
+        <span class="current">
+            {% trans "Page" %} {{ items.number }} / {{ items.paginator.num_pages }}.
+        </span>
+
+        {% if items.has_next %}
+            <a class="next" href="{% url 'listmy' %}?page={{ items.next_page_number }}">{% trans "next" %}</a>
+        {% endif %}
+    </span>
+
+</div>
+<button class="tiny round" onclick="closelist()" style="float: right">{% trans "Close" %}</button>

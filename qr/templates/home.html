@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block head %}
+  <h1 class="panel" align="center" style="background: orange"><strong>{% trans "Welcome to Home Of Saw-High" %}</strong></h1>
+{% endblock head %}
+{% block body %}
+   
+    
+  <div class="large-8 medium-8 small-8 columns  panel radius" style="float: left">	
+
+  		
+  	<div class="large-12 medium-12 columns">
+    	<h5  class="warning radius label" style="float: left"><strong>{% trans "QR-Code Generator" %}</strong></h5>
+    </div> 
+    
+	<div id="leftpanel" class="large-6 medium-6 columns " style="display: block">	
+		<div id="user" style="background: #fff">
+		{% include 'user_panel.html' %}
+		</div>		
+		<div class="large-12 medium-12 columns">
+
+		{% include 'listmenu.html' %}
+	  	</div>	 
+	</div>
+
+	<div id="listall" class="large-6 medium-6 columns" style="display: none">
+	  <div id="ajax_table_result" class="large-12 medium-12 columns panel">
+	  </div>	  	
+	</div>	  
+		
+    <div id="qrform" class="large-6 medium-6 columns " style="display: block">
+	  {% include 'form.html' %}
+    </div> 
+     
+    <div id="myqr" class="large-6 medium-6 columns " style="display: none;">	
+	</div>
+
+<p class="large-12 medium-12 columns" align="center" >deal lay low may say saw high</p>
+  </div> 
+  
+
+  <div class="large-4 medium-4 columns" style="float: right">
+  	  <div class="callout panel radius">
+  	{% include 'bousou.html' %}
+  	</div>  
+  	</div>  
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+{% endblock body %}
+{% block foot %}
+
+
+
+{% endblock foot %}

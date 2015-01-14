@@ -1,0 +1,21 @@
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+<div>
+{% for lang in LANGUAGES %}
+<div>
+<form action="/i18n/setlang/" method="post">{% csrf_token %}
+<input name="next" type="hidden" value="" />
+<input name="language" type="hidden" value="{{ lang.0 }}" />
+{% ifequal lang.0 LANGUAGE_CODE %}
+<input class="success label tiny" type="submit" value="{{ lang.1 }}" style="width:65px"/>
+{% else %}
+<input class="alert label tiny" type="submit" value="{{ lang.1 }}"  style="width:65px"/>
+{% endifequal %}
+</form>
+</div>
+{% endfor %}
+</div>
+
+

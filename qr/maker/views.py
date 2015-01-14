@@ -1,25 +1,92 @@
 from .forms import QRForm
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from .models import QR
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.urlresolvers import reverse
+from django.shortcuts import render_to_response
+from django.template.context import RequestContext
+from django.contrib.auth.models import User
+from django.db.models import Q
+from django.views.decorators.http import require_POST
+from django.core.exceptions import PermissionDenied
 
-def Create(request):
-    if request.method == 'POST':
-        form = QRForm(request.POST, request.FILES)
+def home(request):
+    context = {'form':QRForm}
+    print request.LANGUAGE_CODE
+    return render(request, 'home.html', context)
+
+@require_POST
+def create(request):
+    if request.user.is_authenticated():
+        form = QRForm(data=request.POST, files=request.FILES)
         if form.is_valid():
-            qr = form.save()
-            return HttpResponseRedirect('qr/%s/' % qr.id)
-    else: form = QRForm()
-    return render(request, 'qr.html', {'form': form})
+            qr = form.save(commit=False)
+            qr.owner = request.user
+            qr.save()
 
+#             return HttpResponseRedirect('qr/%s/' % qr.id)
+            return detail(request, qr.id)
+    else:
+        raise PermissionDenied
+
+# @require_POST
+def delete(request, qr_id):
+    item = QR.objects.get(id=qr_id)
+    if item.owner == request.user:
+        item.delete()
+        res = HttpResponse()
+        c = '{"status":"success", "id":"%s"}' % str(qr_id)
+        res.__init__(content=c, content_type='application/json', reason=None)
+        return res
+    else:
+        raise PermissionDenied
+# @require_POST
+def show(request, qr_id):
+
+    item = QR.objects.get(id=qr_id)
+    if item.owner == request.user:
+        item.shown = True
+        item.save()
+        res = HttpResponse()
+        c = '{"status":"success", "id":"%s"}' % str(qr_id)
+        res.__init__(content=c, content_type='application/json', reason=None)
+        return res
+    else:
+        raise PermissionDenied
+
+# @require_POST
+def hide(request, qr_id):
+    item = QR.objects.get(id=qr_id)
+    if item.owner == request.user:
+
+        item.shown = False
+        item.save()
+        res = HttpResponse()
+        c = '{"status":"success", "id":"%s"}' % str(qr_id)
+        res.__init__(content=c, content_type='application/json', reason=None)
+        return res
+    else:
+        raise PermissionDenied
+#     else: form = QRForm()
+#     return render(request, 'qr.html', {'form': form})
 def detail(request, qr_id):
     item = get_object_or_404(QR, pk=qr_id)
     return render(request, 'detail.html', {'item': item})
+#     qr = get_object_or_404(QR, pk=qr_id)
+#     res = HttpResponse()
+#     words = qr.input
+#     avatar = qr.owner.profile.image
+#     name = qr.owner.profile.displayname
+#     url = qr.owner.profile.url
+#     qr = qr.qrmaked.url
+#     c = '{"status":"success","words":"%s", "avatar":"%s", "name":"%s", "url":"%s", "qr":"%s"}' % (words, avatar, name, url, qr)
+#     res.__init__(content=c, content_type='application/json', reason=None)
+#     return res
 
-def listshow(request):
-    list1 = QR.objects.all() [:]  # .order_by('-pub_date')[:5]
-    paginator = Paginator(list1, 25)  # Show 25 contacts per page
+def list_all(request):
+    list1 = QR.objects.all().filter(shown=True).order_by('-date')  # .order_by('-pub_date')[:5]
+    paginator = Paginator(list1, 6)  # Show 25 contacts per page
     page = request.GET.get('page')
     try:
         items = paginator.page(page)
@@ -30,6 +97,47 @@ def listshow(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         items = paginator.page(paginator.num_pages)
     context = {'items': items}
-    return render(request, 'list.html', context)
+    return render(request, 'listall.html', context)
+
+
+def list_mine(request):
+    list2 = QR.objects.filter(owner=request.user).order_by('-date')
+    paginator = Paginator(list2, 6)  # Show 25 contacts per page
+    page = 1
+    if request.is_ajax():
+        query = request.GET.get('page')
+        if query is not None:
+            page = query
+    try:
+        items2 = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        items2 = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        items2 = paginator.page(paginator.num_pages)
+    context = {'items': items2}
+    return render(request, 'listmy.html', context)
+
+def list_his(request, user_id):
+    user = User.objects.get(pk=user_id)
+    list3 = QR.objects.filter(owner=user).filter(shown=True).order_by('-date')
+    paginator = Paginator(list3, 6)  # Show 25 contacts per page
+    page = 1
+    if request.is_ajax():
+        query = request.GET.get('page')
+        if query is not None:
+            page = query
+    try:
+        items3 = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        items3 = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        items3 = paginator.page(paginator.num_pages)
+    context = {'items': items3, 'user':user}
+    return render(request, 'listhis.html', context)
+
 
 # Create your views here.

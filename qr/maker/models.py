@@ -4,6 +4,10 @@ import qrcode
 from PIL import Image, ImageOps
 from cStringIO import StringIO
 import os
+from django.contrib.auth.models import User
+from django.db.models.signals import pre_delete
+from django.dispatch.dispatcher import receiver
+from django.utils.translation import ugettext_lazy as _
 
 now = datetime.datetime.now()
 date = (now.year, now.month, now.day)
@@ -29,9 +33,7 @@ def make_qr(self):
     if not self.icon:
         img.save(temp_handle, FILE_EXTENSION)
     else:
-
         icon = Image.open(StringIO(self.icon.read()))
-        make_thumb(self, icon)
         icon = icon.convert("RGBA")
         img_w, img_h = img.size
         factor = 4
@@ -55,37 +57,20 @@ def make_qr(self):
 
     self.qrmaked.save('qr.%s' % (FILE_EXTENSION), suf, save=False)
 
-def make_thumb(self, icon):
-    if not self.icon:
-        return
-    # icon = Image.open(StringIO(self.icon.read()))
-    DJANGO_TYPE = self.icon.file.content_type
-    if DJANGO_TYPE == 'image/jpeg':
-        PIL_TYPE = 'jpeg'
-        FILE_EXTENSION = 'jpg'
-    elif DJANGO_TYPE == 'image/png':
-        PIL_TYPE = 'png'
-        FILE_EXTENSION = 'png'
-    temp = StringIO()
-    w, h = icon.size
-    size = 200
-    if w > size or h > size:
-        THUMBNAIL_SIZE1 = (size, size)
-        thumb = ImageOps.fit(icon, THUMBNAIL_SIZE1, Image.ANTIALIAS)
-    else:
-        thumb = icon
-    thumb.save(temp, PIL_TYPE)
-    temp.seek(0)
-    suf = SimpleUploadedFile(os.path.split(self.icon.name)[-1], temp.read(), content_type=DJANGO_TYPE)
-
-    self.thumb.save('%s_thumbnail1.%s' % (os.path.splitext(suf.name)[0], FILE_EXTENSION), suf, save=False)
-
 class QR(models.Model):
-    input = models.TextField(max_length=2000)
-    icon = models.ImageField(upload_to=ICON_PATH, height_field=None, width_field=None, max_length=100, null=True, blank=True)
-    thumb = models.ImageField(upload_to=QR_PATH, blank=True)
+    owner = models.ForeignKey(User)
+    date = models.DateTimeField(auto_now=True)
+    input = models.TextField(_('Input Words'), max_length=2000)
+    icon = models.ImageField(_('Icon'), upload_to=ICON_PATH, null=True, blank=True)
     qrmaked = models.ImageField(upload_to=QR_PATH, blank=True)
+    shown = models.BooleanField(_('Show To Others'), default=True)
 
     def save(self):
         make_qr(self)
+        self.icon.delete(False)
         super(QR, self).save()
+
+
+@receiver(pre_delete, sender=QR)
+def thumb_delete(sender, instance, **kwargs):
+    instance.qrmaked.delete(False)

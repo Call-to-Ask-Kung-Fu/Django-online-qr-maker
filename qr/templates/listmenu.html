@@ -1,0 +1,14 @@
+{% load i18n %}
+<p>{% trans "View The Codes" %}</p>
+
+
+<ul class="button-group round">
+  <li><a class="button listall" href="{% url 'listall' %}">{% trans "All" %}</a></li>
+  {% if user and not user.is_anonymous %}
+  <li><a class="button listall" href="{% url 'listmy' %}" >{% trans "My" %}</a></li>
+ {% endif %}
+</ul>
+<div class="callout panel">
+  <p>{% trans "This Part Was From Another Saw-High, And DO NOT Block Him On Google+." %}</p>
+
+</div>

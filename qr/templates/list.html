@@ -1,19 +1,36 @@
-{% for item in items %}
-    <li><a href="/qr/{{ item.id }}/">{{ item.input }}</a></li>
-{% endfor %}
-<div class="pagination">
-    <span class="step-links">
-        {% if items.has_previous %}
-            <a href="?page={{ items.previous_page_number }}">previous</a>
-        {% endif %}
-
-        <span class="current">
-            Page {{ items.number }} of {{ items.paginator.num_pages }}.
-        </span>
-
-        {% if items.has_next %}
-            <a href="?page={{ items.next_page_number }}">next</a>
-        {% endif %}
-    </span>
-</div>
-<a href="/">home</a>
+{% load i18n %}
+<table class="large-12 medium-12 columns">
+ 	<thead>
+ 	  <tr>
+ 	  	<th>{% trans "User" %}</th>
+ 	  	<th>{% trans "Content" %}</th>
+ 	  	{% ifequal item.owner user %}
+ 	  	<th>{% trans "Operation" %}</th>
+ 	  	{% endifequal %}
+ 	  </tr>
+ 	</thead>
+ 	<tbody>
+ 		{% for item in items %}
+ 	  <tr id="tr{{item.id}}">
+ 	  	
+ 	  	<td><a class="listall" href="{% url 'listhis' item.owner.id %}" ><img  style="height: 30px" src="{{ item.owner.profile.image }}" /></a></td>
+ 	  	<td><a class="detail" href="{% url 'detail' item.id %}"  onclick="detail()">{{ item.input|slice:":10" }}</a></td>
+ 	  	{% ifequal item.owner user %}
+ 	    <td>
+ 	    	<ul class="stack button-group">
+ 	    		
+ 	    		{% if item.shown %}
+  				<li id="hide{{item.id}}" style="display: block"><a href="{% url 'hide' item.id %}" class="warning round label hide">Hide</a></li>
+  				<li id="show{{item.id}}" style="display: none"><a href="{% url 'show' item.id %}" class="success round label show">Show</a></li>
+  				{% else %}
+  				<li id="show{{item.id}}" style="display: block"><a href="{% url 'show' item.id %}" class="success round label show">Show</a></li>
+  				<li id="hide{{item.id}}" style="display: none"><a href="{% url 'hide' item.id %}" class="warning round label hide">Hide</a></li>
+  				{% endif %}
+ 				<li><a href="{% url 'delete' item.id %}" class="alert round label delete">Delete</a></li>
+ 			</ul>
+  		</td>	
+  		{% endifequal %}
+ 	  </tr>
+ 	  {% endfor %} 
+ 	</tbody>    
+  </table>

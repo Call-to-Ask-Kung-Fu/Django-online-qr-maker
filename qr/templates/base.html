@@ -1,0 +1,54 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {% block foundation_css %}
+  <link href="{% static "foundation/css/normalize.css" %}" rel="stylesheet"/>
+  <link href="{% static "foundation/css/foundation.min.css" %}" rel="stylesheet"/>
+  {% endblock foundation_css %}
+
+  {% block foundation_modernizer %}
+  <script src="{% static "foundation/js/vendor/modernizr.js" %}"></script>
+  {% endblock foundation_modernizer %}
+
+  {% block foundation_jquery %}
+  <script src="{% static "foundation/js/vendor/jquery.js" %}"></script>
+  {% endblock foundation_jquery %}
+
+  {% block foundation_js %}
+  <script src="{% static "foundation/js/foundation.min.js" %}"></script>
+  
+  {% endblock foundation_js %}
+ <style>
+body{
+    background-image: url("{{user.profile.cover}}");
+    background-size:100%,Auto;  
+    opacity: 0.8  
+}
+.ft{top: 10px}
+h1{margin-top:10px}
+</style>
+</head>
+<body> 
+	<div class="row">
+		{% block head %}
+      {% endblock %}
+		</div>
+    <div class="row">
+
+      {% block body %}
+      {% endblock %}
+
+</div>
+	<div class="row">
+		{% block foot %}
+      {% endblock %}
+		</div>
+
+<script src="{% static "js/ajax.js" %}"></script>
+</body>
+</html>              

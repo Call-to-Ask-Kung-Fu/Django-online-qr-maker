@@ -1,0 +1,14 @@
+{% load staticfiles %}
+{% load i18n %}
+
+	<strong class="warning radius label" style="float: right">Romaji To Bousou Charaters</strong>
+	<div align="center"><img style="padding: 20px" src="{% static "image/k2.png" %}" style="width: 250px"/>
+		<p>This Part Was From This Saw-High.</p>
+		<p><a href="https://plus.google.com/u/0/105079110292122345981/about">Block Him On Google+!</a></p>		
+	</div>
+{% trans "Enter Romaji" %}: <input class="field" type="text" /><br />
+{% trans "Charater Choices" %}:<form id="list"></form><br />
+{% trans "Result" %}:<div id="list2"><br /></div>
+
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script type="text/javascript" src="{% static 'js/bousou.js' %}"></script>

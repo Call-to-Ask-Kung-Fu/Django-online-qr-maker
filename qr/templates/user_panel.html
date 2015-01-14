@@ -1,0 +1,18 @@
+{% load i18n %}
+<div class="large-9 medium-9 columns panel">
+   {% if user and not user.is_anonymous %}
+       <image src='{{ user.profile.image }}'></image>
+       	<p>{{ user.profile.displayname|default:user.username }}</p> 
+       <div class="g-plusone" data-annotation="inline" data-width="300"></div>    
+       <a class="button small alert round" href="{% url 'auth:logout' %}?next={% url 'home' %}">{% trans "Logout" %}</a>
+   {% else %}
+   	   <p>{% trans "Please Login To Play With This Part." %}</p>
+       <a class="button alert round large-12" href="{% url 'social:begin' 'google-oauth2' %}?next={% url 'home' %}">{% trans "Login with Google"%}</a>
+   {% endif %}
+ </div>  
+<div class="large-3 medium-3 columns">
+	{% include 'setlang.html' %}
+	</div>
+<script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'zh-CN'}
+</script>
