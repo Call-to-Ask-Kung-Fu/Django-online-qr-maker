@@ -9,7 +9,23 @@ function makeqr()
         		values[field.name]=field.value;
         	}
         );
-            if (values['input']==''){$("#id_input").val('Type Something');;retun;}
+            if (values['input']==''){alert('Type Something');;retun;}
+ if ($("#id_icon")[0].files[0]) {         
+            if ($.browser.msie) {
+ //before making an object of ActiveXObject, 
+ //please make sure ActiveX is enabled in your IE browser
+ var objFSO = new ActiveXObject("Scripting.FileSystemObject"); var filePath = $("#id_icon")[0].value;
+ var objFile = objFSO.getFile(filePath);
+ var fileSize = objFile.size; //size in kb
+ fileSize = fileSize / 1024; //size in mb 
+ }
+ //for FF, Safari, Opeara and Others
+ else {
+ fileSize = $("#id_icon")[0].files[0].size; //size in kb
+ fileSize = fileSize / 1024; //size in mb 
+ }
+ if (fileSize>100){alert('icon size must be < 100 kb');;retun;}
+  }           
             var data = new FormData($('#new').get(0));
             $.ajax({
                url: url,
