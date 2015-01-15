@@ -19,122 +19,122 @@ msgstr ""
 
 #: maker/models.py:67 templates/detail.html:3
 msgid "Input Words"
-msgstr ""
+msgstr "输入文字"
 
 #: maker/models.py:68
 msgid "Icon"
-msgstr ""
+msgstr "图标"
 
 #: maker/models.py:70
 msgid "Show To Others"
-msgstr ""
+msgstr "他人可见"
 
 #: templates/bousou.html:4
 msgid "Romaji To Bousou Charaters"
-msgstr ""
+msgstr "罗马字转换成暴走文字"
 
 #: templates/bousou.html:6
 msgid "This Part Was From This Saw-High."
-msgstr ""
+msgstr "这一块就是这个傻屄弄的。"
 
 #: templates/bousou.html:7
 msgid "Block Him On Google+!"
-msgstr ""
+msgstr "快去基家B了他！"
 
 #: templates/bousou.html:9
 msgid "Enter Romaji"
-msgstr ""
+msgstr "输入罗马字"
 
 #: templates/bousou.html:10
 msgid "Charater Choices"
-msgstr ""
+msgstr "字符选择"
 
 #: templates/bousou.html:11
 msgid "Result"
-msgstr ""
+msgstr "结果"
 
 #: templates/detail.html:4
 msgid "Code"
-msgstr ""
+msgstr "二维码"
 
 #: templates/detail.html:5
 msgid "Create More"
-msgstr ""
+msgstr "继续搞"
 
 #: templates/form.html:5
 msgid "Create!"
-msgstr ""
+msgstr "生成！"
 
 #: templates/form.html:7
 msgid "Login with Google To Continue"
-msgstr ""
+msgstr "用古狗账号登录才能玩"
 
 #: templates/home.html:5
 msgid "Welcome to Home Of Saw-High"
-msgstr ""
+msgstr "欢迎光临Saw—High之家"
 
 #: templates/home.html:14
 msgid "QR-Code Generator"
-msgstr ""
+msgstr "二维码生成器"
 
 #: templates/home.html:39
 msgid "Strongly Recommended: After Use, Say \"or high say saw high\" Please."
-msgstr ""
+msgstr "强烈建议：使用后请说一句\"or high say saw high\"。"
 
 #: templates/list.html:5
 msgid "User"
-msgstr ""
+msgstr "用户"
 
 #: templates/list.html:6
 msgid "Content"
-msgstr ""
+msgstr "内容"
 
 #: templates/list.html:7
 msgid "Operation"
-msgstr ""
+msgstr "操作"
 
 #: templates/listall.html:6 templates/listhis.html:5 templates/listmy.html:6
 msgid "previous"
-msgstr ""
+msgstr "前一页"
 
 #: templates/listall.html:10 templates/listhis.html:9 templates/listmy.html:10
 msgid "Page"
-msgstr ""
+msgstr "页码"
 
 #: templates/listall.html:14 templates/listhis.html:13
 #: templates/listmy.html:14
 msgid "next"
-msgstr ""
+msgstr "后一页"
 
 #: templates/listall.html:18 templates/listhis.html:18
 #: templates/listmy.html:19
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #: templates/listmenu.html:2
 msgid "View The Codes"
-msgstr ""
+msgstr "看看你们做了什么"
 
 #: templates/listmenu.html:6
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 #: templates/listmenu.html:8
 msgid "My"
-msgstr ""
+msgstr "自己"
 
 #: templates/listmenu.html:12
 msgid "This Part Was From Another Saw-High, And DO NOT Block Him On Google+."
-msgstr ""
+msgstr "这一块是另一个Saw-High做的，不要跑去基家B了他。"
 
 #: templates/user_panel.html:7
 msgid "Logout"
-msgstr ""
+msgstr "登出"
 
 #: templates/user_panel.html:9
 msgid "Please Login To Play With This Part."
-msgstr ""
+msgstr "登录了再玩"
 
 #: templates/user_panel.html:10
 msgid "Login with Google"
-msgstr ""
+msgstr "用古狗账号登录"
