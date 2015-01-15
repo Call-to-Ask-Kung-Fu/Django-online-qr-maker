@@ -2,7 +2,7 @@
 <form id="new" enctype="multipart/form-data" method="post" action="{% url 'create' %}">{% csrf_token %}
 {{ form.as_p }}
 {% if user and not user.is_anonymous %}
-<button class="large-12 radius success" type="button" onclick="makeqr()">{% trans "Create!" %}</button>
+<button class="expand radius success" type="button" onclick="makeqr()">{% trans "Create!" %}</button>
 {% else %}
 <a class="button alert round large-12" href="{% url 'social:begin' 'google-oauth2' %}?next={% url 'home' %}">{% trans "Login with Google To Continue"%}</a>
 {% endif %}

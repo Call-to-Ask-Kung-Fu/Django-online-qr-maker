@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from django.views.decorators.http import require_POST
 from django.core.exceptions import PermissionDenied
+import os
 
 def home(request):
     context = RequestContext(request, {'user': request.user, 'form':QRForm})

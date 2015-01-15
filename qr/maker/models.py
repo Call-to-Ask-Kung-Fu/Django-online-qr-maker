@@ -33,6 +33,10 @@ def make_qr(self):
     if not self.icon:
         img.save(temp_handle, FILE_EXTENSION)
     else:
+
+        if self.icon.size / 1024 > 100:
+            return
+
         icon = Image.open(StringIO(self.icon.read()))
         icon = icon.convert("RGBA")
         img_w, img_h = img.size

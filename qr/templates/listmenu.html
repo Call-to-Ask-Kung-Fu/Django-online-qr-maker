@@ -3,9 +3,9 @@
 
 
 <ul class="button-group round">
-  <li><a class="button listall" href="{% url 'listall' %}">{% trans "All" %}</a></li>
+  <li><a class="button disabled listall" href="{% url 'listall' %}">{% trans "All" %}</a></li>
   {% if user and not user.is_anonymous %}
-  <li><a class="button listall" href="{% url 'listmy' %}" >{% trans "My" %}</a></li>
+  <li><a class="button disabled listall" href="{% url 'listmy' %}" >{% trans "My" %}</a></li>
  {% endif %}
 </ul>
 <div class="callout panel">

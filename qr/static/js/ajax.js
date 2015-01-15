@@ -43,6 +43,8 @@ function makeqr()
 };
 
 function more () {
+	$("#id_input").val('');
+	$("#id_icon").val('');
 	$("#myqr").hide();
   $("#qrform").show();                   
 }

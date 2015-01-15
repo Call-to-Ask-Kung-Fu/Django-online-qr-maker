@@ -2,5 +2,5 @@
 <img src="{{ item.owner.profile.image }}" /><a href="{{ item.owner.profile.url }}">{{ item.owner.profile.displayname }}</a>
 <p>{% trans "Input Words" %}:{{ item.input }}</p>
 <p>{% trans "Code" %}:<img src="{{ item.qrmaked.url }}" alt="My image"/></p>
-<button id="more" onclick="more()">Create More</button>
+<button class="expand radius disabled" id="more" onclick="more()">{% trans 'Create More' %}</button>
 

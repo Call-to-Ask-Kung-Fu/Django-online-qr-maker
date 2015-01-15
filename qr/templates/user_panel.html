@@ -7,7 +7,7 @@
        <a class="button small alert round" href="{% url 'auth:logout' %}?next={% url 'home' %}">{% trans "Logout" %}</a>
    {% else %}
    	   <p>{% trans "Please Login To Play With This Part." %}</p>
-       <a class="button alert round large-12" href="{% url 'social:begin' 'google-oauth2' %}?next={% url 'home' %}">{% trans "Login with Google"%}</a>
+       <a class="button alert round large-12" href="{% url 'social:begin' 'google-oauth2' %}?next={% url 'home' %}">{% trans "Login with Google" %}</a>
    {% endif %}
  </div>  
 <div class="large-3 medium-3 columns">

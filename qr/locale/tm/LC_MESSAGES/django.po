@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-14 15:41+0800\n"
+"POT-Creation-Date: 2015-01-15 12:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: maker/models.py:63 templates/detail.html:3
+#: maker/models.py:67 templates/detail.html:3
 msgid "Input Words"
 msgstr ""
 
-#: maker/models.py:64
+#: maker/models.py:68
 msgid "Icon"
 msgstr ""
 
-#: maker/models.py:66
+#: maker/models.py:70
 msgid "Show To Others"
+msgstr ""
+
+#: templates/bousou.html:4
+msgid "Romaji To Bousou Charaters"
+msgstr ""
+
+#: templates/bousou.html:6
+msgid "This Part Was From This Saw-High."
+msgstr ""
+
+#: templates/bousou.html:7
+msgid "Block Him On Google+!"
 msgstr ""
 
 #: templates/bousou.html:9
@@ -45,6 +57,10 @@ msgstr ""
 msgid "Code"
 msgstr ""
 
+#: templates/detail.html:5
+msgid "Create More"
+msgstr ""
+
 #: templates/form.html:5
 msgid "Create!"
 msgstr ""
@@ -61,6 +77,10 @@ msgstr ""
 msgid "QR-Code Generator"
 msgstr ""
 
+#: templates/home.html:39
+msgid "Strongly Recommended: After Use, Say \"or high say saw high\" Please."
+msgstr ""
+
 #: templates/list.html:5
 msgid "User"
 msgstr ""
@@ -69,7 +89,7 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: templates/list.html:8
+#: templates/list.html:7
 msgid "Operation"
 msgstr ""
 
