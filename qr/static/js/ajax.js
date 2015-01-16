@@ -204,7 +204,7 @@ $( document ).ajaxStop(function(){
         ajax_get_update();
     });
     
-  $('.hide').off("click").click(function(e)
+  $('.hid').off("click").click(function(e)
 	{	  
 		var url = $(this).attr('href');     
 	 e.preventDefault();

@@ -19,11 +19,11 @@
  	    	<ul class="stack button-group">
  	    		
  	    		{% if item.shown %}
-  				<li id="hide{{item.id}}" style="display: block"><a href="{% url 'hide' item.id %}" class="warning round label hide" style="width: 46px">Hide</a></li>
+  				<li id="hide{{item.id}}" style="display: block"><a href="{% url 'hide' item.id %}" class="warning round label hid" style="width: 46px">Hide</a></li>
   				<li id="show{{item.id}}" style="display: none"><a href="{% url 'show' item.id %}" class="success round label show" style="width: 46px">Show</a></li>
   				{% else %}
   				<li id="show{{item.id}}" style="display: block"><a href="{% url 'show' item.id %}" class="success round label show" style="width: 46px">Show</a></li>
-  				<li id="hide{{item.id}}" style="display: none"><a href="{% url 'hide' item.id %}" class="warning round label hide" style="width: 46px">Hide</a></li>
+  				<li id="hide{{item.id}}" style="display: none"><a href="{% url 'hide' item.id %}" class="warning round label hid" style="width: 46px">Hide</a></li>
   				{% endif %}
  				<li><a href="{% url 'delete' item.id %}" class="alert round label delete" style="width: 46px">Delete</a></li>
  			</ul>
