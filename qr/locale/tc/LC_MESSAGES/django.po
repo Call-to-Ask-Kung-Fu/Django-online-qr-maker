@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-19 13:47+0800\n"
+"POT-Creation-Date: 2015-01-19 15:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,6 +58,10 @@ msgid "Code"
 msgstr "你要個碼"
 
 #: templates/detail.html:5
+msgid "Download!"
+msgstr "下佢老母個載！"
+
+#: templates/detail.html:6
 msgid "Create More"
 msgstr "再整過"
 
@@ -138,4 +142,3 @@ msgstr "登入咗先玩好唔好。"
 #: templates/user_panel.html:9
 msgid "Login with Google"
 msgstr "用古狗帳號登錄"
-

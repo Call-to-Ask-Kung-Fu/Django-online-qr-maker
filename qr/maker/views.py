@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from django.views.decorators.http import require_POST
 from django.core.exceptions import PermissionDenied
+from django.utils.encoding import smart_str
 import os
 
 def home(request):
@@ -122,5 +123,14 @@ def list_his(request, user_id):
     context = {'items': items3, 'user':user}
     return render(request, 'listhis.html', context)
 
+def download(request, qr_id):
+    qr = QR.objects.get(pk=qr_id)
+    file = qr.qrmaked.file
+    input = qr.input
+    file_name = "qr-%s.png" % input[:5]
+    response = HttpResponse(file, mimetype='application/force-download')
+    response['Content-Disposition'] = 'attachment; filename="%s"' % file_name
+#     response['X-Sendfile'] = smart_str(file_name)
+    return response
 
 # Create your views here.

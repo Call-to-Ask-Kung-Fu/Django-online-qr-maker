@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-19 13:47+0800\n"
+"POT-Creation-Date: 2015-01-19 15:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,6 +58,10 @@ msgid "Code"
 msgstr "你抽码"
 
 #: templates/detail.html:5
+msgid "Download!"
+msgstr "下佢老母个载！"
+
+#: templates/detail.html:6
 msgid "Create More"
 msgstr "整过个"
 

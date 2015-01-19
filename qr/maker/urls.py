@@ -1,10 +1,11 @@
 from django.conf.urls import patterns, url
-from .views import detail, list_all, create, list_mine, list_his, delete, hide, show
+from .views import detail, list_all, create, list_mine, list_his, delete, hide, show, download
 
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', create, name='create'),
     url(r'^(?P<qr_id>\d+)/$', detail, name='detail'),
+    url(r'^(?P<qr_id>\d+)/download/$', download, name='download'),
     url(r'^listall/$', list_all, name='listall'),
     url(r'^listmy/$', list_mine, name='listmy'),
     url(r'^listhis/(?P<user_id>\d+)/$', list_his, name='listhis'),
