@@ -20,18 +20,14 @@ def home(request):
 def create(request):
     if request.user.is_authenticated():
         form = QRForm(data=request.POST, files=request.FILES)
-        print form
         if form.is_valid():
             qr = form.save(commit=False)
             qr.owner = request.user
             qr.save()
-
-#             return HttpResponseRedirect('qr/%s/' % qr.id)
             return detail(request, qr.id)
     else:
         raise PermissionDenied
 
-# @require_POST
 def delete(request, qr_id):
     item = QR.objects.get(id=qr_id)
     if item.owner == request.user:
@@ -42,9 +38,8 @@ def delete(request, qr_id):
         return res
     else:
         raise PermissionDenied
-# @require_POST
-def show(request, qr_id):
 
+def show(request, qr_id):
     item = QR.objects.get(id=qr_id)
     if item.owner == request.user:
         item.shown = True
@@ -56,11 +51,9 @@ def show(request, qr_id):
     else:
         raise PermissionDenied
 
-# @require_POST
 def hide(request, qr_id):
     item = QR.objects.get(id=qr_id)
     if item.owner == request.user:
-
         item.shown = False
         item.save()
         res = HttpResponse()
@@ -69,21 +62,10 @@ def hide(request, qr_id):
         return res
     else:
         raise PermissionDenied
-#     else: form = QRForm()
-#     return render(request, 'qr.html', {'form': form})
+
 def detail(request, qr_id):
     item = get_object_or_404(QR, pk=qr_id)
     return render(request, 'detail.html', {'item': item})
-#     qr = get_object_or_404(QR, pk=qr_id)
-#     res = HttpResponse()
-#     words = qr.input
-#     avatar = qr.owner.profile.image
-#     name = qr.owner.profile.displayname
-#     url = qr.owner.profile.url
-#     qr = qr.qrmaked.url
-#     c = '{"status":"success","words":"%s", "avatar":"%s", "name":"%s", "url":"%s", "qr":"%s"}' % (words, avatar, name, url, qr)
-#     res.__init__(content=c, content_type='application/json', reason=None)
-#     return res
 
 def list_all(request):
     list1 = QR.objects.all().filter(shown=True).order_by('-date')  # .order_by('-pub_date')[:5]
