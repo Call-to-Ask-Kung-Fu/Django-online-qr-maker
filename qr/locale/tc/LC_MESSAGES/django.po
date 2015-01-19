@@ -71,7 +71,7 @@ msgstr "用古狗帳號登錄咗先俾玩"
 
 #: templates/home.html:5
 msgid "This Is SawHigh.com!"
-msgstr "呢度就係SawHigh.com！"
+msgstr "呢度就係：SawHigh.com！"
 
 #: templates/home.html:14
 msgid "QR-Code Generator"
@@ -139,5 +139,3 @@ msgstr "登入咗先玩好唔好。"
 msgid "Login with Google"
 msgstr "用古狗帳號登錄"
 
-#~ msgid "Welcome to Home Of Saw-High"
-#~ msgstr "歡迎光臨Saw-High之家"
