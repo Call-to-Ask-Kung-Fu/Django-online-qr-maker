@@ -128,7 +128,7 @@ def download(request, qr_id):
     file = qr.qrmaked.file
     input = qr.input
     file_name = "qr-%s.png" % input[:5]
-    response = HttpResponse(file, mimetype='application/force-download')
+    response = HttpResponse(file, content_type='application/force-download')
     response['Content-Disposition'] = 'attachment; filename="%s"' % file_name
 #     response['X-Sendfile'] = smart_str(file_name)
     return response
