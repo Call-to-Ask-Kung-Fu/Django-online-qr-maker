@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-15 12:17+0800\n"
+"POT-Creation-Date: 2015-01-19 13:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,8 +70,8 @@ msgid "Login with Google To Continue"
 msgstr "用古狗账号登录才能玩"
 
 #: templates/home.html:5
-msgid "Welcome to Home Of Saw-High"
-msgstr "欢迎光临Saw—High之家"
+msgid "This Is SawHigh.com!"
+msgstr "这里就是：SawHigh.com!"
 
 #: templates/home.html:14
 msgid "QR-Code Generator"
@@ -127,14 +127,17 @@ msgstr "自己"
 msgid "This Part Was From Another Saw-High, And DO NOT Block Him On Google+."
 msgstr "这一块是另一个Saw-High做的，不要跑去基家B了他。"
 
-#: templates/user_panel.html:7
+#: templates/user_panel.html:6
 msgid "Logout"
 msgstr "登出"
 
-#: templates/user_panel.html:9
+#: templates/user_panel.html:8
 msgid "Please Login To Play With This Part."
 msgstr "登录了再玩"
 
-#: templates/user_panel.html:10
+#: templates/user_panel.html:9
 msgid "Login with Google"
 msgstr "用古狗账号登录"
+
+#~ msgid "Welcome to Home Of Saw-High"
+#~ msgstr "欢迎光临Saw—High之家"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-15 12:17+0800\n"
+"POT-Creation-Date: 2015-01-19 13:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgid "Login with Google To Continue"
 msgstr ""
 
 #: templates/home.html:5
-msgid "Welcome to Home Of Saw-High"
+msgid "This Is SawHigh.com!"
 msgstr ""
 
 #: templates/home.html:14
@@ -127,14 +127,14 @@ msgstr ""
 msgid "This Part Was From Another Saw-High, And DO NOT Block Him On Google+."
 msgstr ""
 
-#: templates/user_panel.html:7
+#: templates/user_panel.html:6
 msgid "Logout"
 msgstr ""
 
-#: templates/user_panel.html:9
+#: templates/user_panel.html:8
 msgid "Please Login To Play With This Part."
 msgstr ""
 
-#: templates/user_panel.html:10
+#: templates/user_panel.html:9
 msgid "Login with Google"
 msgstr ""
