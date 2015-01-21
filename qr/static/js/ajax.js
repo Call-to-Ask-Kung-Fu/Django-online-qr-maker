@@ -27,8 +27,8 @@ function makeqr()
  if (fileSize>100){alert('icon size must be < 100 kb');;retun;}
   }           
             var data = new FormData($('#new').get(0));
-            $("qrsubmit").hide();
-            $("prog").show();
+            $("#qrsubmit").hide();
+            $("#prog").show();
             $.ajax({
                url: url,
                // dataType:"JSON",
