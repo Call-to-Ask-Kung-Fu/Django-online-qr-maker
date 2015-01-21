@@ -41,6 +41,9 @@ function makeqr()
                    $("#myqr").html(d);
                    $("#qrform").hide();
                    $("#myqr").show();
+                   $("#prog").hide();
+                   $("#qrsubmit").show();
+            		
             });
 };
 
