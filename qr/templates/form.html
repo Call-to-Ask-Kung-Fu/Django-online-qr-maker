@@ -3,7 +3,6 @@
 {{ form.as_p }}
 <div align="center" id="prog" style="display: none"> 
 {% include 'prg.html' %}
-<p>Just a joke.</p>
 </div>
 {% if user and not user.is_anonymous %}
 <button id="qrsubmit" class="expand radius success" type="button" onclick="makeqr()">{% trans "Create!" %}</button>
