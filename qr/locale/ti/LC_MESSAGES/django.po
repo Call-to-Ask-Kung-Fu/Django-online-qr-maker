@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-19 15:57+0800\n"
+"POT-Creation-Date: 2015-02-11 11:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,11 +65,11 @@ msgstr ""
 msgid "Create More"
 msgstr ""
 
-#: templates/form.html:5
+#: templates/form.html:8
 msgid "Create!"
 msgstr ""
 
-#: templates/form.html:7
+#: templates/form.html:10
 msgid "Login with Google To Continue"
 msgstr ""
 
@@ -81,7 +81,7 @@ msgstr ""
 msgid "QR-Code Generator"
 msgstr ""
 
-#: templates/home.html:39
+#: templates/home.html:40
 msgid "Strongly Recommended: After Use, Say \"or high say saw high\" Please."
 msgstr ""
 

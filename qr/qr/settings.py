@@ -40,7 +40,8 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
     'foundation',
     'accounts',
-    'maker'
+    'maker',
+    'site_dl'
 )
 
 
@@ -102,7 +103,7 @@ LANGUAGES = (
              ('sc', u'简体粵語'),
              ('tm', u'正體國語'),
              ('sm', u'简体國語'),
-             ('thai', u'ไทย'),
+             ('ti', u'ไทย'),
              )
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
