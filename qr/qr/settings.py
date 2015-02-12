@@ -25,7 +25,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sawhigh.com', 'www.sawhigh.com']
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'foundation',
     'accounts',
     'maker',
-    'site_dl'
+#    'site_dl'
 )
 
 
